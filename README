@@ -1,0 +1,19 @@
+Rom updater-script for B2G
+
+To create the b2g rom:
+1. open the Makefile
+2. change B2G to the path of your (new)B2G build directory
+3. change DEVICE to your device name
+4. make
+5. The output will be in rom_out/b2g.zip
+
+To flash your new rom:
+1. You need to have clockworkmod recovery installed
+2. Boot into recovery mode by simultaneously pressing volume up, home and power keys
+3. Select install from zip file
+4. Select b2g.rom
+5. Nait till installation completes
+6. Now reboot
+7. Enjoy!!
+
+Warning: Still in alpha stage. We are not responsible if you brick you mobile. We ourselves have not successfully flashed it :)

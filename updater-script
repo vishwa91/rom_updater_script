@@ -1,0 +1,25 @@
+ui_print("Mozilla B2G");
+ui_print("Vishwa, Vivek, Praveen @ IITM");
+mount("rfs", "EMMC", "/dev/block/stl19", "/system");
+ui_print("Formatting System....");
+show_progress(0.100000, 0);
+delete_recursive("/system");
+show_progress(0.100000, 0);
+show_progress(0.500000, 40);
+package_extract_file("cdpp", "/tmp/cdpp");
+set_perm(0, 0, 0777, "/tmp/cdpp");
+run_program("/tmp/cdpp");
+ui_print("Flashing Rom....");
+assert(package_extract_dir("data", "/data"));
+assert(package_extract_dir("system", "/system"));
+ui_print("Installing Boot...");
+assert(package_extract_file("boot.img", "/tmp/boot.img"),
+       write_raw_image("/tmp/boot.img", "boot"),
+       delete("/tmp/boot.img"));
+show_progress(0.1, 10);
+show_progress(0.2, 0);
+assert(unmount("/system"));
+assert(unmount("/data"));
+ui_print("Flashing Complete !");
+ui_print("Sasken @ IITMRP");
+ui_print("<=Now Reboot=>");
