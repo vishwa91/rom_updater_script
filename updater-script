@@ -1,6 +1,6 @@
 ui_print("Mozilla B2G");
 ui_print("Vishwa, Vivek, Praveen @ IITM");
-assert(mount("rfs", "EMMC", "/dev/block/stl19", "/system"));
+mount("rfs", "EMMC", "/dev/block/stl19", "/system");
 ui_print("Formatting System....");
 show_progress(0.100000, 0);
 delete_recursive("/system");
