@@ -12,8 +12,8 @@ b2g.rom: $(OUT) $(SRC) updater-script update-binary
 	cp cdpp $(OUT)/cdpp
 	mkdir -p $(OUT)/META-INF/com/google/android
 	
-	cp update-binary $(OUT)/META-INF/com/google/android/update-script
-	cp updater-script $(OUT)/META-INF/com/google/android/updater-script
+	cp update-binary $(OUT)/META-INF/com/google/android
+	cp updater-script $(OUT)/META-INF/com/google/android
 	
 	cd $(OUT) && zip -r b2g.zip .
 	echo "Created b2g.zip in $(OUT)"

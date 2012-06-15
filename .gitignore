@@ -1,0 +1,5 @@
+# Do not track the output directory
+rom_out
+
+# Do not track temporary files
+*~
