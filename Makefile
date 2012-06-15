@@ -1,7 +1,7 @@
 # Makefile to create the B2G ROM
 
-B2G = /home/praveen/Programs/intern/totoro-B2G
-DEVICE = totoro
+B2G = /home/vishwanath/Documents/Files/B2G
+DEVICE = u8150
 OUT = ./rom_out
 
 SRC = $(OUT)/system $(OUT)/data $(OUT)/boot.img
@@ -16,7 +16,7 @@ b2g.rom: $(OUT) $(SRC) updater-script update-binary
 	cp updater-script $(OUT)/META-INF/com/google/android
 	
 	cd $(OUT) && zip -r b2g.zip .
-	echo "Created b2g.zip in $(OUT)"
+	@echo "Created b2g.zip in $(OUT)"
 
 $(OUT):
 	mkdir $(OUT)
@@ -29,4 +29,8 @@ $(OUT)/data:
 	
 $(OUT)/boot.img:
 	cp $(B2G)/out/target/product/$(DEVICE)/boot.img $(OUT)
-	
+
+.PHONY: clean
+clean:
+	rm -rf ./rom_out
+	@echo removed rom_out
