@@ -3,3 +3,6 @@ rom_out
 
 # Do not track temporary files
 *~
+
+# Do not track the additional makefile (for configuring B2G folder path), if any
+makefile

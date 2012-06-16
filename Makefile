@@ -1,7 +1,7 @@
 # Makefile to create the B2G ROM
 
-B2G = /home/vishwanath/Documents/Files/B2G
-DEVICE = u8150
+B2G ?= ./B2G
+DEVICE = totoro
 OUT = ./rom_out
 
 SRC = $(OUT)/system $(OUT)/data $(OUT)/boot.img
