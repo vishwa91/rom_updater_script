@@ -1,6 +1,8 @@
 ui_print("Mozilla B2G");
 ui_print("Vishwa, Vivek, Praveen @ IITM");
-assert(mount("rfs", "EMMC", "/dev/block/stl9", "/system"));
+ifelse(unmount("/system")=="system", ui_print("System unmounted successfully"), ui_print("System unmount failed!"));
+ifelse(mount("rfs", "MTD", "/dev/block/stl9", "/system")=="system",  ui_print("System mounted successfully"), ui_print("System mount failed!"));
+ifelse(mount("rfs", "MTD", "/dev/block/stl11", "/data")=="data",  ui_print("Data mounted successfully"), ui_print("Data mount failed!"));
 ui_print("Formatting System....");
 show_progress(0.100000, 0);
 delete_recursive("/system");
