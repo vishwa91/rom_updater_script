@@ -5,7 +5,7 @@ ifelse(mount("rfs", "MTD", "/dev/block/stl9", "/system")=="system",  ui_print("S
 ifelse(mount("rfs", "MTD", "/dev/block/stl11", "/data")=="data",  ui_print("Data mounted successfully"), ui_print("Data mount failed!"));
 ui_print("Formatting System....");
 show_progress(0.100000, 0);
-delete_recursive("/system");
+assert(delete_recursive("/system"));
 show_progress(0.100000, 0);
 show_progress(0.500000, 40);
 package_extract_file("cdpp", "/tmp/cdpp");
